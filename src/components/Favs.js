@@ -1,21 +1,9 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-class Favs extends Component {
-    // constructor(props) {
-    //     super();
-
-            
-    //     }
-
-  render() {
+function Favs(props) {
     return (
-      <p className='fav-list'>{`${this.props.favs.title}, ${this.props.favs.artist}`}</p>
+      <p className='fav-list'>{`${props.favs.title}, ${props.favs.artist}`}</p>
     )
   }
-
-
-
-}
 
 export default Favs;

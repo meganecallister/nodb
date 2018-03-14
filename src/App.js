@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 
-import Button from './components/Button';
+import Crud from './components/crud/Crud';
 import Favs from './components/Favs';
 
 class App extends Component {
@@ -32,13 +32,9 @@ class App extends Component {
       title: value
     })
   }
- 
 
   handleClick() {
-    axios.get(`https://api.lyrics.ovh/v1/${this.state.artist}/${this.state.title}`)
-      .then(res => {
-        console.log(res);
-
+    axios.get(`https://api.lyrics.ovh/v1/${this.state.artist}/${this.state.title}`).then(res => {
         this.setState({
           lyrics: res.data.lyrics,
           artist: '',
@@ -48,7 +44,7 @@ class App extends Component {
             title: this.state.title
           }
         })
-      }) .catch(err => {
+      }).catch(err => {
         this.setState({
           favs: {
             artist: '',
@@ -58,7 +54,6 @@ class App extends Component {
         })
       })
   }
-
 
   postFavs() {
     let copyArr = [...this.state.favsArr]
@@ -113,11 +108,6 @@ class App extends Component {
 
         <h6>FAVS</h6>
 
-        <div className="inputs">
-        
-          <button>Add Fav</button>
-          <button>Clear</button>
-        </div>
 
         <div className="favs-box">
           {this.state.favsArr.map((e, i) => (
@@ -127,11 +117,9 @@ class App extends Component {
 
       </div>
       
-          <Button
-            lyrics = { this.state.lyrics }
-            artist = { this.state.artist }
-            title = { this.state.title }
-            favs = { this.state.favs }
+          <Crud
+            //favs = { this.state.favs }
+            favsArr = { this.state.favsArr }
           /> 
         </main>
     
