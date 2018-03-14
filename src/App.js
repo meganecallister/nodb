@@ -10,8 +10,8 @@ class App extends Component {
     super();
 
     this.state = {
-      artist: '',
-      title: '',
+      artist: 'Coldplay',
+      title: 'Yellow',
       lyrics: '',
       favsArr: [],
       favs: {
@@ -96,7 +96,7 @@ class App extends Component {
           <div className = "display-lyrics">
             { this.state.favs.artist
               ? 
-            <p> { this.state.favs.title + " by " + this.state.favs.artist} </p>
+            <p className='lyrics'> { this.state.favs.title + " by " + this.state.favs.artist} </p>
               : null
               }
 
@@ -119,7 +119,7 @@ class App extends Component {
       
           <Crud
             //favs = { this.state.favs }
-            favsArr = { this.state.favsArr }
+            //favsArr = { this.state.favsArr }
           /> 
         </main>
     

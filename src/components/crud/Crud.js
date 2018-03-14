@@ -89,7 +89,7 @@ class Crud extends Component {
         let mappedFavsArr = this.state.favsArr.map( (e, i) => {
             return (
                 <div key={i + e.id}>
-                    <p>{e.favTitle}</p>
+                    <p className='fav-list'>{e.favTitle}</p>
                     <button onClick={() => this.deleteSong(i)}>Delete</button>
                     <button onClick={() => this.editSong(i)}>Edit</button>
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Favs(props) {
     return (
-      <p className='fav-list'>{`${props.favs.title}, ${props.favs.artist}`}</p>
+      <p className='fav-list'>{`${props.favs.title} by ${props.favs.artist}`}</p>
     )
   }
 

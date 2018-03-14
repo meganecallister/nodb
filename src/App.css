@@ -5,7 +5,6 @@
   background-color: #ff6a25;
   font-family: 'Roboto', sans-serif;
 }
-
 .App {
   margin: 0 auto;
   height: 200vh;
@@ -15,30 +14,29 @@ main {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: 10px;
+  /* margin: 10px; */
 }
-.search-side {
+/* .search-side {
   width: 600px;
   height: 100%
 }
 .add-side {
   width: 250px;
-}
+} */
 .favs-box {
   background-color: #333;
   height: 300px;
   border: solid 1px black;
   overflow: auto;
   color: white;
-  padding: 10px;
+  /* padding: 10px; */
 }
 .display-lyrics {
   background-color: #ddd;
   border: solid black 1px;
   overflow: auto;
-  height: 150vh;
-  margin: 0 auto;
-  padding: 20px;
+  /* margin: 0 auto;
+  padding: 20px; */
 }
 p {
   color: black;
@@ -105,27 +103,24 @@ button {
   align-items: center;
 } */
 
-.song-list {
+/* .song-list {
   background-color: red;
   height: 200px;
   width: 80%;
   border: 1px solid #333;
-}
+} */
 
 .fav-list {
-  background-color: #333;
+  background-color: red;
   color: white;
   font-size: 14px;
   text-align: left;
 }
-
-
-
-.favorite {
+/* .favorite {
   background-color: #333;
   font-size: 14px;
   height: 28px;
-}
+} */
 
 h6 {
   text-align: center;
@@ -133,10 +128,10 @@ h6 {
   margin: 10px 0px;
   font-family: 'Monoton', cursive;
 }
-
+/* 
 h3 {
   background-color: #ddd;
   text-align: center;
   margin-bottom: 20px;
-}
+} */
 
