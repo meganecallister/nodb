@@ -67,62 +67,45 @@ class App extends Component {
     return (
       <div className = "App" >
         <p className = "title"> Lyrics </p>
+        <div className='headings'>
+          <h6>SEARCH</h6>
+          <h6>FAVS</h6>
+        </div>
 
-    <main>
+        <main>
 
-      <div className="search-side">
-        <h6>SEARCH</h6>
+        <div>
           <div className = "inputs" >
-
             <input
               placeholder = "Title"
-              className = "input"
               type = "text"
               onChange = { e => { this.updateTitle(e.target.value) }}
               value = { this.state.title } />
-
             <input
               placeholder = "Artist"
-              className = "input"
               type = "text"
               onChange = {e => { this.updateArtist(e.target.value) }}
               value = { this.state.artist }/>
-        
-            <button onClick = { () => this.handleClick()}> Search </button>
-            <button onClick = { () => this.postFavs()}> Favorite </button>
-        
+            <button onClick = { () => this.handleClick()}>S</button>
+            <button onClick = { () => this.postFavs()}>F</button>
           </div>
-
+        </div>
+        <div>
           <div className = "display-lyrics">
             { this.state.favs.artist
               ? 
             <p className='lyrics'> { this.state.favs.title + " by " + this.state.favs.artist} </p>
-              : null
-              }
+              : null }
+            <p className='lyrics'> {this.state.lyrics}</p>
+          </div>
 
-          <p className='lyrics'> {this.state.lyrics}</p>
-        </div>
-      </div>
-
-      <div className="add-side">
-
-        <h6>FAVS</h6>
-
-
-        <div className="favs-box">
-          {this.state.favsArr.map((e, i) => (
-            <Favs key={i} favs = {e} />)
-            )}
-        </div>
-
-      </div>
-      
-          <Crud
-            //favs = { this.state.favs }
-            //favsArr = { this.state.favsArr }
-          /> 
-        </main>
-    
+          <div className="favs-box">
+            {this.state.favsArr.map((e, i) => (
+              <Favs key={i} favs = {e} />))}
+              <Crud/> 
+          </div>
+          </div>
+        </main>      
       </div>
     );
   }

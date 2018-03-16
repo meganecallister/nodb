@@ -77,6 +77,7 @@ class Crud extends Component {
         }
         axios.put(`http://localhost:4010/api/updateFavsArr/${id}`, body).then(res => {
             this.setState({
+                // favsArr: res.data
                 favsArr: res.data
             })
         }).catch(error => {
@@ -88,34 +89,26 @@ class Crud extends Component {
         
         let mappedFavsArr = this.state.favsArr.map( (e, i) => {
             return (
-                <div key={i + e.id}>
+                <div key={i + e.id} className='skinny-div'>
                     <p className='fav-list'>{e.favTitle}</p>
-                    <button onClick={() => this.deleteSong(i)}>Delete</button>
-                    <button onClick={() => this.editSong(i)}>Edit</button>
+                    <button onClick={() => this.deleteSong(i)}>-</button>
+                    <button onClick={() => this.editSong(i)}>E</button>
                 </div>
             )
         })
 
         return (
-            // <div className="add-side">
-            <div>
+            
+            <div className='favs-box'>
+                {mappedFavsArr}
                 <input
                 placeholder = "Title, Artist"
-                className = "input2"
                 type = "text"
                 onChange = { e => { this.handleChange(e) }}
                 value = { this.state.favTitle }
-                />
-                {/* <input
-                placeholder = "Artist"
-                className = "input2"
-                type = "text"
-                onChange = {e => { this.updateFavArtist(e.target.valA) }}
-                value = { this.state.favArtist }
-                /> */}
+                />     
+                <button onClick = { () => this.addSong()}>+</button>
                 
-                <button onClick = { () => this.addSong()}> Add </button>
-                {mappedFavsArr}
             </div>
         
         );
