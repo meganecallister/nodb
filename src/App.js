@@ -34,7 +34,8 @@ class App extends Component {
   }
 
   handleClick() {
-    axios.get(`https://api.lyrics.ovh/v1/${this.state.artist}/${this.state.title}`).then(res => {
+    axios.get(`https://api.lyrics.ovh/v1/${this.state.artist}/${this.state.title}`)
+      .then(res => {
         this.setState({
           lyrics: res.data.lyrics,
           artist: '',
